@@ -1,0 +1,7 @@
+
+vacuum.space_height (Set height where vacuum begin) int 1000 -31000 31000
+vacuum.air_pump_range (Air pump range) int 5 1 10
+vacuum.profile_mapgen (Profile vacuum mapgen) bool false
+vacuum.debug (Show deug info) bool false
+vacuum.disable_physics (Disable physic) bool false
+vacuum.disable_mapgen (Disable mapgen) bool false

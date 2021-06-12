@@ -10,7 +10,7 @@ end
 minetest.register_abm({
   label = "air -> vacuum replacement",
 	nodenames = {"air"},
-	neighbors = {"vacuum:vacuum"},
+	neighbors = {"hades_vacuum:vacuum"},
 	interval = 1,
 	chance = 1,
 	action = vacuum.throttle(1000, function(pos)
@@ -19,7 +19,7 @@ minetest.register_abm({
 
 		if vacuum.is_pos_in_space(pos) and not vacuum.near_powered_airpump(pos) then
 			-- in space, evacuate air
-			minetest.set_node(pos, {name = "vacuum:vacuum"})
+			minetest.set_node(pos, {name = "hades_vacuum:vacuum"})
 		end
 	end)
 })
@@ -28,12 +28,11 @@ minetest.register_abm({
 -- works slower than vacuum abm
 minetest.register_abm({
   label = "vacuum -> air replacement",
-	nodenames = {"vacuum:vacuum"},
+	nodenames = {"hades_vacuum:vacuum"},
 	neighbors = {"air"},
 	interval = 1,
 	chance = 2,
 	action = vacuum.throttle(1000, function(pos)
-
     -- update metrics
 		if metric_space_vacuum_abm ~= nil then metric_space_vacuum_abm.inc() end
 

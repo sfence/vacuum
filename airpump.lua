@@ -49,7 +49,7 @@ local update_formspec = function(meta)
 end
 
 
-minetest.register_node("vacuum:airpump", {
+minetest.register_node("hades_vacuum:airpump", {
 	description = "Air pump",--tube_entry
 	tiles = { -- top, bottom
 		"vacuum_airpump_top.png",
@@ -63,7 +63,7 @@ minetest.register_node("vacuum:airpump", {
 	paramtype2 = "facedir",
 	legacy_facedir_simple = true,
 	groups = {cracky=3, oddly_breakable_by_hand=3, tubedevice=1, tubedevice_receiver=1},
-	sounds = default.node_sound_glass_defaults(),
+	sounds = hades_sounds.node_sound_glass_defaults(),
 
 	mesecons = {effector = {
 		action_on = function (pos, node)
@@ -179,10 +179,10 @@ minetest.register_node("vacuum:airpump", {
 
 
 minetest.register_craft({
-	output = "vacuum:airpump",
+	output = "hades_vacuum:airpump",
 	recipe = {
-		{"default:steel_ingot", "default:mese_block", "default:steel_ingot"},
-		{"default:diamond", "default:glass", "default:steel_ingot"},
-		{"default:steel_ingot", "default:steelblock", "default:steel_ingot"},
+		{"hades_core:steel_ingot", "hades_core:mese", "hades_core:steel_ingot"},
+		{"hades_core:diamond", "hades_core:glass", "hades_core:steel_ingot"},
+		{"hades_core:steel_ingot", "hades_core:steelblock", "hades_core:steel_ingot"},
 	},
 })

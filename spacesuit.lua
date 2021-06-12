@@ -4,11 +4,11 @@ local function repair_recipe(partname)
     type = "shapeless",
     output = partname,
     recipe = {
-      "vacuum:air_bottle",
+      "hades_vacuum:air_bottle",
       partname
     },
     replacements = {
-      {"vacuum:air_bottle", "vessels:steel_bottle"}
+      {"hades_vacuum:air_bottle", "vessels:steel_bottle"}
     }
   })
 end

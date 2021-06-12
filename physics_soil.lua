@@ -11,7 +11,7 @@ minetest.register_abm({
 		"default:dirt_with_rainforest_litter",
 		"default:dirt_with_coniferous_litter"
 	},
-	neighbors = {"vacuum:vacuum"},
+	neighbors = {"hades_vacuum:vacuum"},
 	interval = 1,
 	chance = 1,
 	action = vacuum.throttle(100, function(pos)

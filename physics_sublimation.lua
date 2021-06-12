@@ -4,7 +4,7 @@
 minetest.register_abm({
   label = "space vacuum sublimate",
 	nodenames = {"group:snowy", "group:leaves", "group:water"},
-	neighbors = {"vacuum:vacuum"},
+	neighbors = {"hades_vacuum:vacuum"},
 	interval = 1,
 	chance = 1,
 	action = vacuum.throttle(100, function(pos)
@@ -12,6 +12,6 @@ minetest.register_abm({
 			return
 		end
 
-		minetest.set_node(pos, {name = "vacuum:vacuum"})
+		minetest.set_node(pos, {name = "hades_vacuum:vacuum"})
 	end)
 })

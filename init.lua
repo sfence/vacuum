@@ -9,7 +9,7 @@ vacuum = {
 	disable_mapgen = minetest.settings:get("vacuum.disable_mapgen")
 }
 
-local MP = minetest.get_modpath("vacuum")
+local MP = minetest.get_modpath("hades_vacuum")
 
 if minetest.get_modpath("digilines") then
 	dofile(MP.."/digilines.lua")

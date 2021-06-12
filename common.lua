@@ -17,7 +17,7 @@ function vacuum.near_powered_airpump(pos)
 	local pos1 = vector.subtract(pos, {x=vacuum.air_pump_range, y=vacuum.air_pump_range, z=vacuum.air_pump_range})
 	local pos2 = vector.add(pos, {x=vacuum.air_pump_range, y=vacuum.air_pump_range, z=vacuum.air_pump_range})
 
-	local nodes = minetest.find_nodes_in_area(pos1, pos2, {"vacuum:airpump"})
+	local nodes = minetest.find_nodes_in_area(pos1, pos2, {"hades_vacuum:airpump"})
 	for _,node in ipairs(nodes) do
 		local meta = minetest.get_meta(node)
 		if vacuum.airpump_active(meta) then

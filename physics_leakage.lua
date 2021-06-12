@@ -1,6 +1,6 @@
 local has_monitoring = minetest.get_modpath("monitoring")
 local has_mesecons_random = minetest.get_modpath("mesecons_random")
-local has_technic = minetest.get_modpath("technic")
+local has_technic = minetest.get_modpath("hades_technic")
 
 local metric_space_vacuum_leak_abm
 
@@ -20,9 +20,9 @@ if has_mesecons_random then
 end
 
 if has_technic then
-  table.insert(leaky_nodes, "technic:lv_cable")
-  table.insert(leaky_nodes, "technic:mv_cable")
-  table.insert(leaky_nodes, "technic:hv_cable")
+  table.insert(leaky_nodes, "hades_technic:lv_cable")
+  table.insert(leaky_nodes, "hades_technic:mv_cable")
+  table.insert(leaky_nodes, "hades_technic:hv_cable")
 end
 
 
@@ -30,7 +30,7 @@ end
 minetest.register_abm({
         label = "space vacuum depressurize",
 	nodenames = leaky_nodes,
-	neighbors = {"vacuum:vacuum"},
+	neighbors = {"hades_vacuum:vacuum"},
 	interval = 2,
 	chance = 2,
 	action = vacuum.throttle(250, function(pos)
@@ -47,7 +47,7 @@ minetest.register_abm({
 				return
 			end
 
-			if node.name == "vacuum:airpump" then
+			if node.name == "hades_vacuum:airpump" then
 				-- pump is airthight
 				return
 			end
@@ -62,7 +62,7 @@ minetest.register_abm({
 					minetest.set_node(surrounding_node, {name = "default:cobble"})
 				else
 					-- normal case
-					minetest.set_node(surrounding_node, {name = "vacuum:vacuum"})
+					minetest.set_node(surrounding_node, {name = "hades_vacuum:vacuum"})
 				end
 			end
 		end

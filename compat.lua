@@ -1,2 +1,2 @@
 
-minetest.register_alias("vacuum:air", "air")
+minetest.register_alias("hades_vacuum:air", "air")

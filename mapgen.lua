@@ -1,5 +1,5 @@
 
-local c_vacuum = minetest.get_content_id("vacuum:vacuum")
+local c_vacuum = minetest.get_content_id("hades_vacuum:vacuum")
 local c_ignore = minetest.get_content_id("ignore")
 local c_air = minetest.get_content_id("air")
 

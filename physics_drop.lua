@@ -31,7 +31,7 @@ end
 minetest.register_abm({
         label = "space drop nodes",
 	nodenames = drop_nodes,
-	neighbors = {"vacuum:vacuum"},
+	neighbors = {"hades_vacuum:vacuum"},
 	interval = 1,
 	chance = 1,
 	action = vacuum.throttle(100, function(pos)
@@ -41,7 +41,7 @@ minetest.register_abm({
 		end
 
 		local node = minetest.get_node(pos)
-		minetest.set_node(pos, {name = "vacuum:vacuum"})
+		minetest.set_node(pos, {name = "hades_vacuum:vacuum"})
 
 		for _, drop in pairs(get_node_drops(node)) do
 			minetest.add_item(pos, ItemStack(drop))

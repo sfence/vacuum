@@ -2,7 +2,7 @@
 
 minetest.register_abm({
   label = "airpump",
-	nodenames = {"vacuum:airpump"},
+	nodenames = {"hades_vacuum:airpump"},
 	interval = 5,
 	chance = 1,
 	action = function(pos)
@@ -55,15 +55,15 @@ minetest.register_abm({
 -- initial airpump step
 minetest.register_abm({
   label = "airpump seed",
-	nodenames = {"vacuum:airpump"},
-	neighbors = {"vacuum:vacuum"},
+	nodenames = {"hades_vacuum:airpump"},
+	neighbors = {"hades_vacuum:vacuum"},
 	interval = 1,
 	chance = 1,
 	action = function(pos)
 		local meta = minetest.get_meta(pos)
 		if vacuum.airpump_active(meta) then
 			-- seed initial air
-			local node = minetest.find_node_near(pos, 1, {"vacuum:vacuum"})
+			local node = minetest.find_node_near(pos, 1, {"hades_vacuum:vacuum"})
 
 			if node ~= nil then
 				minetest.set_node(node, {name = "air"})

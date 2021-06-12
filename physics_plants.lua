@@ -13,7 +13,7 @@ minetest.register_abm({
 		"ethereal:orange",
 		"ethereal:strawberry"
 	},
-	neighbors = {"vacuum:vacuum"},
+	neighbors = {"hades_vacuum:vacuum"},
 	interval = 1,
 	chance = 1,
 	action = vacuum.throttle(100, function(pos)

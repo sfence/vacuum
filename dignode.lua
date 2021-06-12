@@ -6,9 +6,9 @@ minetest.register_on_dignode(function(pos, oldnode, digger)
 		return;
 	end
 
-	local np = minetest.find_node_near(pos, 1,{"vacuum:vacuum"})
+	local np = minetest.find_node_near(pos, 1,{"hades_vacuum:vacuum"})
 	if np ~= nil then
-		minetest.set_node(pos, {name = "vacuum:vacuum"})
+		minetest.set_node(pos, {name = "hades_vacuum:vacuum"})
 		return
 	end
 end)

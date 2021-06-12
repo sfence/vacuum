@@ -1,6 +1,6 @@
 
 
-minetest.register_node("vacuum:vacuum", {
+minetest.register_node("hades_vacuum:vacuum", {
 	description = "Vacuum",
 	walkable = false,
 	pointable = false,
