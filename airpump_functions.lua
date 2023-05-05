@@ -4,6 +4,11 @@
 local empty_bottle = "vessels:steel_bottle"
 local air_bottle = "hades_vacuum:air_bottle"
 
+if minetest.get_modpath("hades_laboratory") then
+  empty_bottle = "hades_laboratory:gas_cylinder"
+  air_bottle = "hades_laboratory:gas_cylinder"
+end
+
 vacuum.has_full_air_bottle = function(inv)
 	return inv:contains_item("main", {name=air_bottle, count=1})
 end
@@ -46,6 +51,11 @@ vacuum.do_fill_bottle = function(inv)
 	return false
 end
 
+if minetest.get_modpath("hades_laboratory") then
+  vacuum.do_fill_bottle = function(inv)
+    return false
+  end
+end
 
 vacuum.do_repair_spacesuit = function(inv)
 	for i = 1, inv:get_size("main") do
